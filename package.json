@@ -1,6 +1,6 @@
 {
   "name": "webpack-quickly-starter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Webpack-Quickly-Starter",
   "main": "index.js",
   "scripts": {
