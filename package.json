@@ -9,7 +9,7 @@
     "build": "npx webpack --config ./webpack/webpack.prod.js"
   },
   "keywords": [
-    "Webpack-Quickly-Starter"
+    "Webpack-Quickly-Starter","快速创建 Webpack4 项目", "Webpack4 项目", "Webpack4"
   ],
   "author": "pingan8787",
   "license": "ISC",
@@ -18,6 +18,10 @@
     "last 2 versions",
     "not ie <= 8"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pingan8787/Webpack-Quickly-Starter.git"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
