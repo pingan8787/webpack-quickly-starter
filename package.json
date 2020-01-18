@@ -1,7 +1,7 @@
 {
-  "name": "webpack-starter",
+  "name": "webpack-quickly-starter",
   "version": "1.0.0",
-  "description": "Webpack-Starter",
+  "description": "Webpack-Quickly-Starter",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "build": "npx webpack --config ./webpack/webpack.prod.js"
   },
   "keywords": [
-    "Webpack-Starter"
+    "Webpack-Quickly-Starter"
   ],
   "author": "pingan8787",
   "license": "ISC",
