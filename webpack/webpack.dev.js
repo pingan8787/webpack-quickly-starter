@@ -1,5 +1,6 @@
 const path = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const merge = require('webpack-merge');
 const config = require('./webpack.config.js');
 const webpack = require('webpack');
@@ -29,8 +30,45 @@ const devConfig = {
         // }
     },
     devtool: 'inline-source-map',
+    module: {
+        rules: [
+            {
+                test: /\.(sc|c|sa)ss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            ident: "postcss",
+                            sourceMap: true,
+                            plugins: loader => [
+                                require('autoprefixer')(),
+                                // 这里可以使用更多配置，如上面提到的 postcss-cssnext 等
+                                // require('postcss-cssnext')()
+                            ]
+                        }
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                ]
+            }
+        ]
+    },
     plugins: [
         new BundleAnalyzerPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name]_[hash].css',
+        }),
         new webpack.NamedModulesPlugin(), // 更容易查看（patch）的以来
         new webpack.HotModuleReplacementPlugin() // 替换插件
     ]

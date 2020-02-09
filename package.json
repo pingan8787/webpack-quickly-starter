@@ -1,15 +1,18 @@
 {
   "name": "webpack-quickly-starter",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Webpack-Quickly-Starter",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx webpack-dev-server --config ./webpack/webpack.dev.js",
-    "build": "npx webpack --config ./webpack/webpack.prod.js"
+    "build": "npx webpack --config ./webpack/webpack.prod.js --display-used-exports"
   },
   "keywords": [
-    "Webpack-Quickly-Starter","快速创建 Webpack4 项目", "Webpack4 项目", "Webpack4"
+    "Webpack-Quickly-Starter",
+    "快速创建 Webpack4 项目",
+    "Webpack4 项目",
+    "Webpack4"
   ],
   "author": "pingan8787",
   "license": "ISC",
