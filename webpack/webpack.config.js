@@ -18,11 +18,13 @@ module.exports = {
     },
     module: {
         rules: [
-
+            // html-loader 不能与 html-webpack-plugin 一起使用，
+            // html-loader 会导致默认ejs模版引起语法解析失效，造成${} <%= = %>等语法不生效  
+            // {
+            //     test: /\.html$/,
+            //     loader: 'html-loader'
+            // }, 
             {
-                test: /\.html$/,
-                loader: 'html-loader'
-            }, {
                 test: /\.js$/,
                 use: [{
                     loader: 'babel-loader',
@@ -76,6 +78,10 @@ module.exports = {
                 collapseWhitespace: true, // 移除空格
                 removeComments: true, // 移除注释
                 removeAttributeQuotes: true, // 移除双引号
+                html5: true,
+                preserveLineBreaks: false,
+                minifyCSS: true,
+                minifyJS: true,
             }
         }),
     ]
